@@ -1,0 +1,8 @@
+<ul class="nav flex-column left-menu">
+  <li class="nav-item header">
+    Реестры:
+  </li>
+  <li *ngFor="let item of menu_items">
+    <a [ngClass]="{disabled:menu_disabled}" class="nav-link" [routerLink]="[item.link]" [routerLinkActive]="['active']">{{item.label}}</a>
+  </li>
+</ul>
