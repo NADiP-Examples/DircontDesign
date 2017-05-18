@@ -2,7 +2,7 @@
 // import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from "@angular/router";
 // import { Observable } from "rxjs/Rx";
 // import { AuthService } from './auth.service';
-// import { PersonalDataService } from './personal-data.service';
+// import { PersonalDataService } from './personal-json_data.service';
 //
 // @Injectable()
 // export class isLoggedIn implements CanActivate {

@@ -1,0 +1,58 @@
+<div class="row">
+  <label class="col-4">
+    Фамилия ИП
+    <fa class="ico-duplicate" name="angle-double-down"></fa>
+    <input class="simple-input" type="text" placeholder="Иванов" required
+           [(ngModel)]="company_data.owner_second_name" name="owner_second_name" #owner_second_name="ngModel">
+    <!--<div *ngIf="contract_second_name.touched && contract_second_name.errors?.required" class="error">-->
+      <!--{{'Field may not be null.' | translate}}-->
+    <!--</div>-->
+  </label>
+  <label class="col-4">
+    Имя
+    <input class="simple-input" type="text" placeholder="Иван" required
+           [(ngModel)]="company_data.owner_first_name" name="owner_first_name" #owner_first_name="ngModel">
+    <!--<div *ngIf="contract_first_name.touched && contract_first_name.errors?.required" class="error">-->
+      <!--{{'Field may not be null.' | translate}}-->
+    <!--</div>-->
+  </label>
+  <label class="col-4">
+    Отчество
+    <input class="simple-input" type="text" placeholder="Иванович"
+           [(ngModel)]="company_data.owner_patronymic" name="owner_patronymic" #contract_patronymic="ngModel">
+    <!--<div *ngIf="contract_patronymic.touched && contract_patronymic.errors?.required" class="error">-->
+    <!--{{'Field may not be null.' | translate}}-->
+    <!--</div>-->
+  </label>
+</div>
+<div class="row">
+  <label class="col-5">
+    ИНН
+    <input class="simple-input" type="text" required
+           placeholder="123456789012"
+           [(ngModel)]="company_data.itn" name="itn" #itn="ngModel">
+    <!--<div *ngIf="itn.touched && itn.errors?.required" class="error">-->
+      <!--{{'Field may not be null.' | translate}}-->
+    <!--</div>-->
+    <!--<div class="error" *ngIf="itn.touched && itn.errors?.rangeLength">12{{ 'digits.' | translate}}</div>-->
+  </label>
+  <label class="col-5">
+    КПП
+    <input class="simple-input" type="text" required
+           placeholder="12345678912"
+           [(ngModel)]="company_data.iec" name="iec" #iec="ngModel">
+    <!--<div *ngIf="iec.touched && iec.errors?.required" class="error">-->
+      <!--{{'Field may not be null.' | translate}}-->
+    <!--</div>-->
+  </label>
+  <label class="col-5">
+    ОГРНИП
+    <input class="simple-input" type="text" required
+           placeholder="123456789012345"
+           [(ngModel)]="company_data.psrnsp" name="psrnsp" #psrnsp="ngModel">
+    <!--<div *ngIf="psrnsp.touched && psrnsp.errors?.required" class="error">-->
+      <!--{{'Field may not be null.' | translate}}-->
+    <!--</div>-->
+    <!--<div class="error" *ngIf="psrnsp.touched && psrnsp.errors?.rangeLength">15{{ 'digits.' | translate}}</div>-->
+  </label>
+</div>

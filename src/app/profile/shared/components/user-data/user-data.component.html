@@ -1,0 +1,80 @@
+<div *ngIf="!open">
+  <div class="row">
+    <label class="col-4">
+      <input (focus)="onSelect()" class="simple-input" type="text" placeholder="Фамилия">
+    </label>
+  </div>
+</div>
+<div *ngIf="open" [@fadeInOut]>
+  <div class="row">
+    <label class="col-4">
+      Фамилия
+      <input #second_name class="simple-input" type="text" placeholder="Иванов"
+             [(ngModel)]="user_data.second_name" name="second_name">
+      <!--<div *ngIf="second_name.touched && second_name.errors?.required" class="error">-->
+      <!--{{'Field may not be null.' | translate}}-->
+      <!--</div>-->
+    </label>
+    <label class="col-4">
+      Имя
+      <input class="simple-input" type="text" placeholder="Иван"
+             [(ngModel)]="user_data.first_name" name="first_name" #first_name="ngModel">
+      <!--<div *ngIf="first_name.touched && first_name.errors?.required" class="error">-->
+      <!--{{'Field may not be null.' | translate}}-->
+      <!--</div>-->
+    </label>
+    <label class="col-4">
+      Отчество
+      <input class="simple-input" type="text" placeholder="Иванович"
+             [(ngModel)]="user_data.patronymic" name="patronymic" #patronymic="ngModel">
+      <!--<div *ngIf="patronymic.touched && patronymic.errors?.required" class="error">-->
+      <!--{{'Field may not be null.' | translate}}-->
+      <!--</div>-->
+    </label>
+  </div>
+  <div class="row" #emailBlock>
+    <label class="col-4">
+      email
+      <input disabled class="simple-input" type="email" placeholder="example@mail.ru"
+             [value]="user_data.email">
+    </label>
+    <label class="col-4 ignore-label-events">
+      &nbsp;
+      <input type="button" class="btn btn-secondary simple-button" value="Изменить">
+    </label>
+  </div>
+  <!--Password-->
+  <div class="row" #passwordBlock>
+    <label class="col-4">
+      Пароль
+      <input disabled class="simple-input" type="password" value="******">
+    </label>
+    <label class="col-4 ignore-label-events">
+      &nbsp;
+      <input type="button" class="btn btn-secondary simple-button" value="Изменить">
+    </label>
+  </div>
+  <!--End Password-->
+  <div class="row">
+    <label class="col-3" *ngIf="user_data._type != 'partner'">
+      Сайт
+      <input class="simple-input" type="text"
+             pattern="^([a-zA-Zа-яА-я0-9]([a-zA-Zа-яА-я0-9\-]{0,61}[a-zA-Zа-яА-я0-9])?\.)+[a-zA-Zа-яА-я]{2,8}$"
+             placeholder="example.com"
+             [(ngModel)]="user_data.site" name="site" #site="ngModel">
+      <!--<div class="form-control-feedback error" *ngIf="site.touched && site.errors">{{'Invalid url.' | translate}}</div>-->
+    </label>
+    <label *ngFor="let phone of user_data.phones;let i = index;trackBy:customTrackBy" style="position: relative"
+           class="col-3">
+      {{i==0 ? 'Телефоны': '&nbsp;'}}
+      <input [disabled]="form_view" class="simple-input" type="text"
+             placeholder="8 923 600 11 12" [(ngModel)]="user_data.phones[i]">
+      <fa *ngIf="i!=0 && !form_view" class="ico-close" name="times" (click)="removePhone(i)"></fa>
+    </label>
+    <label class="col-3">
+      &nbsp;
+      <fa class="ico-add" name="plus-square-o" (click)="addPhone()"></fa>
+    </label>
+  </div>
+  <button (click)="next()">Далее</button>
+</div>

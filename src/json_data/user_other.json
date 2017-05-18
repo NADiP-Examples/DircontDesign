@@ -1,0 +1,55 @@
+{
+  "authority_basis": "string",
+  "bank_bic": "string",
+  "bank_corresponding_account": "string",
+  "bank_current_account": "string",
+  "bank_name": "string",
+  "bankcard_bank_name": "string",
+  "bankcard_number": "string",
+  "certificate_date": "2017-05-02",
+  "certificate_number": "string",
+  "contract_first_name": "string",
+  "contract_patronymic": "string",
+  "contract_second_name": "string",
+  "iec": "string",
+  "itn": "string",
+  "organization_name": "string",
+  "organization_type": "string",
+  "position": "string",
+  "postal_address_location": {
+    "country": {
+      "id": 0,
+      "title": "string"
+    },
+    "region": {
+      "id": 0,
+      "title": "string"
+    },
+    "city": {
+      "id": 0,
+      "title": "string"
+    }
+  },
+  "postal_address_postcode": "string",
+  "postal_address_street": "string",
+  "psrn": "string",
+  "psrnsp": "string",
+  "registration_address_location": {
+    "country": {
+      "id": 0,
+      "title": "string"
+    },
+    "region": {
+      "id": 0,
+      "title": "string"
+    },
+    "city": {
+      "id": 0,
+      "title": "string"
+    }
+  },
+  "registration_address_postcode": "string",
+  "registration_address_street": "string",
+
+  "snils": "string"
+}

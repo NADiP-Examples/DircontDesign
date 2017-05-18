@@ -1,0 +1,10 @@
+{
+  "passport_date": "2017-05-02",
+  "passport_division_code": "string",
+  "passport_issued_by": "string",
+  "passport_number": "string",
+  "passport_series": "string",
+
+  "site": "string",
+  "phones": ["8 923 623 80 12", "8 911 922 11 22"]
+}

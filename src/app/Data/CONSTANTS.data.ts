@@ -7,3 +7,29 @@ export const ROLES = [
   { title: 'Эксперт', value: 'expert' },
   { title: 'АТП(администратор тех поддержки)', value: 'superuser' }
 ];
+
+export const LEGAL_STATUSES = [
+  {
+    value: 'natural_person',
+    title: 'Физ.лицо'
+  },
+  {
+    value: 'individual_entrepreneur',
+    title: 'ИП'
+  },
+  {
+    value: 'legal_entity',
+    title: 'Юр.лицо'
+  },
+];
+
+export const RESIDENCES = [
+  {
+    value: 'russian_federation',
+    title: 'Резидент РФ'
+  },
+  {
+    value: 'other',
+    title: 'Иное'
+  },
+];

@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-12">
+    <span>{{user_data?.second_name}} {{user_data?.first_name}} {{user_data?.patronymic}}</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <span>Email: {{user_data?.email}}</span>
+    <span *ngIf="user_data?.site">site: {{user_data?.site}}</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    Телефоны: <span *ngFor="let phone of user_data.phones">{{phone}} | </span>
+  </div>
+</div>

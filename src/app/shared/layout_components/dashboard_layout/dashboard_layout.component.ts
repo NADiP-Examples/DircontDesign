@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'app/shared/services/auth.service';
 
 import { TOP_MENU_ITEMS, LEFT_MENU_ITEMS } from './menu-tems';
-import { ROLES } from 'app/CONSTANTS';
+import { ROLES } from '../../../Data/CONSTANTS.data';
 
 @Component({
   // selector: 'dashboard_layout',

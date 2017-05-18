@@ -1,0 +1,28 @@
+<div class="select-block">
+  <header>Резиденство</header>
+  <div class="row">
+    <div class="col-12">
+      <div class="btn-group">
+        <label *ngFor="let _residency of RESIDENCES"
+               class="btn btn-primary" [ngClass]="{active: status.residency==_residency.value}">
+          <input type="radio" name="residency" [(ngModel)]="status.residency" value={{_residency.value}} (change)="changeResidency()">
+          {{_residency.title}}
+        </label>
+      </div>
+    </div>
+  </div>
+  <header>Юридический статус</header>
+  <div class="row">
+    <div class="col-12">
+      <div class="btn-group">
+        <label *ngFor="let _legal_status of LEGAL_STATUSES"
+               class="btn btn-primary" [ngClass]="{active: status.legal_status==_legal_status.value}">
+          <input type="radio" name="legal_status" [(ngModel)]="status.legal_status" value={{_legal_status.value}} (change)="changeLegalStatus()">
+          {{_legal_status.title}}
+        </label>
+      </div>
+    </div>
+  </div>
+  <span>
+</span>
+</div>

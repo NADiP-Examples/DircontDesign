@@ -1,3 +1,29 @@
-<p>
-  profile works!
-</p>
+<button (click)="loadData()">Load Data</button>
+<button (click)="clearData()">Clear Data</button>
+<div class="row">
+  <div class="col-12">
+    <select-status (onChangeStatus)="onChangeStatus($event)" [(status)]="status">
+    </select-status>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div *ngIf="status_selected">
+      <h5>Ваши данные</h5>
+      <user-data [(isFilled)]="user_data_is_filled" *ngIf="!user_data_is_filled" [(user_data)]="user_data"></user-data>
+      <user-data-view *ngIf="user_data_is_filled" [(user_data)]="user_data"></user-data-view>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div *ngIf="user_data_is_filled">
+      <h5>Данные компании</h5>
+      <company-data *ngIf="!company_data_is_filled" [company_data]="company_data"></company-data>
+      <company-data-view *ngIf="company_data_is_filled"></company-data-view>
+    </div>
+  </div>
+</div>
+<span>
+  status: {{user_data_is_filled}}
+</span>

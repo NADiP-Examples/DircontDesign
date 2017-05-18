@@ -1,0 +1,94 @@
+@import "parts/colors"
+@import "parts/mods"
+
+.simple-input
+  height: 41px
+  width: 100%
+  border: 1px solid  #{map_get($component_colors, border)}
+  outline: none
+  padding: 5px 40px 5px 20px
+  background-color: white
+  margin-bottom: -1px
+  &:disabled
+    background-color: #c9c9c9
+  &:required
+    border: 1px solid  #{map_get($component_colors, border_required)}
+
+.simple-button
+  display: block
+  height: 41px
+  cursor: pointer
+
+.simple-select
+  //margin: 41px
+  width: 100%
+  padding: 5px 35px 5px 5px
+  font-size: 16px
+  border: 1px solid #ccc
+  height: 41px
+  //-webkit-appearance: none
+  //-moz-appearance: none
+  //appearance: none
+  background: white
+
+.simple-checkbox
+  width: 20px
+  height: 20px
+
+.custom-radio
+  width: 20px
+  height: 20px
+
+.border
+  flex: 1 1 auto
+  border: 1px solid lightgray
+  margin-top: 10px
+  margin-bottom: 10px
+
+//datepicker styles
+
+.datepicker-container
+  width: 100%
+  .datepicker-calendar
+    position: fixed !important
+
+.datepicker-input-container
+  position: relative
+  width: 100%
+  input.datepicker-input
+    height: 41px
+    border: 1px solid #ccc !important
+    width: 100% !important
+  .datepicker-input-icon
+    position: absolute
+    right: 15px
+    top: 10px
+ng2-datepicker
+  display: inline-block
+
+//hacks
+.ignore-label-events
+  pointer-events: none
+  input
+    pointer-events: auto
+
+//Validation errors
+.error
+  color: red
+
+.error-border
+  border: 2px solid red
+
+input.ng-touched.ng-invalid, ng2-datepicker.ng-touched.ng-invalid, .hasError
+  border: 2px solid red
+  background-color: #fde1e1
+
+.modal-dialog
+  max-width: 700px
+.log_modal
+  .modal-content
+    height: 350px
+
+.disabled
+  pointer-events: none
+  color: gray
