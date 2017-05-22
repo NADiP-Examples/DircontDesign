@@ -12,8 +12,12 @@ export const TOP_MENU_ITEMS = {
   unknown: [],
   admin_of_user: [
     {
-      link: '/personal_data',
+      link: '/profile',
       label: 'Личные данные'
+    },
+    {
+      link: '/profile/demo',
+      label: 'Личные данные(Demo)'
     },
     {
       link: '/employees',

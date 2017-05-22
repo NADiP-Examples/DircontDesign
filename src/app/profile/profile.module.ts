@@ -11,6 +11,7 @@ import { UserDataComponent } from './shared/components/user-data/user-data.compo
 import { UserDataViewComponent } from './shared/components/user-data-view/user-data-view.component';
 import { CompanyDataComponent } from './shared/components/company-data/company-data.component';
 import { CompanyDataViewComponent } from './shared/components/company-data-view/company-data-view.component';
+import { ProfileDemoComponent } from './profile-demo/profile-demo.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { CompanyDataViewComponent } from './shared/components/company-data-view/
     UserDataComponent,
     UserDataViewComponent,
     CompanyDataComponent,
-    CompanyDataViewComponent
+    CompanyDataViewComponent,
+    ProfileDemoComponent
   ]
 })
 export class ProfileModule {

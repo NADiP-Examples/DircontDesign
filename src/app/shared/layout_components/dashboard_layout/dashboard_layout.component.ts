@@ -12,7 +12,7 @@ import { ROLES } from '../../../Data/CONSTANTS.data';
   styleUrls: ['./dashboard_layout.component.sass']
 })
 export class DashboardLayoutComponent {
-  top_menu_items = TOP_MENU_ITEMS.unknown;
+  top_menu_items = TOP_MENU_ITEMS.admin_of_user;
   left_menu_items = LEFT_MENU_ITEMS.unknown;
   ROLES = ROLES;
   disabled = false;
