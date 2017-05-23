@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   // selector: 'app-profile-demo',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-demo.component.sass']
 })
 export class ProfileDemoComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onKeyUp(event){
+    if (event.keyCode === 32){
+      event.target.nextElementSibling?event.target.nextElementSibling.focus(): '';
+    }
   }
 
 }
