@@ -10,9 +10,9 @@ type user_data_status_type = "closed" | "opened" | "saved" | "saved_animate";
 })
 export class ProfileDemoComponent implements OnInit {
 
-  @ViewChild('second_name') set _(input_second_name) {
-    if (input_second_name) input_second_name.nativeElement.focus();
-  }
+  // @ViewChild('second_name') set _(input_second_name) {
+  //   if (input_second_name) input_second_name.nativeElement.focus();
+  // }
 
   user_data_status:user_data_status_type = "closed";
   constructor() { }
@@ -32,6 +32,7 @@ export class ProfileDemoComponent implements OnInit {
   }
 
   saveUserData(form){
+    console.log("Save form");
     this.user_data_status = "saved_animate";
   }
 
