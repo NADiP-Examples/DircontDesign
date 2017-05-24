@@ -5,8 +5,8 @@
   <div *ngIf="user_data_status === 'closed'">
     <input (focus)="user_data_status='opened'" placeholder="Иванов   Иван   Иванович">
   </div>
-  <div *ngIf="user_data_status === 'opened'">
-    <div class="12 block animated bounceIn">
+  <div *ngIf="user_data_status === 'opened' || user_data_status === 'saved_animate'">
+    <div (animationend)="animationEnd($event)" class="12 block animated bounceIn" [ngClass]="{zoomOutLeft:user_data_status === 'saved_animate'}">
       <form #userDataForm="ngForm" (submit)="$event.preventDefault();saveUserData(userDataForm)">
         <div (keyup)="onKeyUp($event)" class="input-block">
           <input placeholder="Иванов   Иван   Иванович" type="text" size="20" maxlength="20"
