@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { close } from "fs";
 
-type user_data_status_type = "closed" | "opened" | "saved";
+type user_data_status_type = "closed" | "opened" | "saved" | "saved_animate";
 
 @Component({
   // selector: 'app-profile-demo',
@@ -21,8 +21,13 @@ export class ProfileDemoComponent implements OnInit {
     }
   }
 
+  animationEnd(){
+    console.log('transitionEnd');
+    if (this.user_data_status == "saved_animate") this.user_data_status = "saved";
+  }
+
   saveUserData(form){
-    this.user_data_status = "saved";
+    this.user_data_status = "saved_animate";
   }
 
   reset(){
