@@ -9,6 +9,11 @@ type user_data_status_type = "closed" | "opened" | "saved" | "saved_animate";
   styleUrls: ['./profile-demo.component.sass']
 })
 export class ProfileDemoComponent implements OnInit {
+
+  @ViewChild('second_name') set _(input_second_name) {
+    if (input_second_name) input_second_name.nativeElement.focus();
+  }
+
   user_data_status:user_data_status_type = "closed";
   constructor() { }
 
