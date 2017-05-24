@@ -15,8 +15,14 @@
       <div *ngIf="user_data_status === 'opened' || user_data_status === 'saved_animate'">
         <div class="animated bounceIn">
           <h4>Резидентство:</h4>
-          <input type="radio" name="resident"> Резидент РФ
-          <input type="radio" name="resident"> Иное<br>
+          <div class="radio">
+            <input class="hidden-xs-up"  type="radio" name="resident" id="resident-rf">
+            <label for="resident-rf" class="radio-label">Резидент РФ</label>
+          </div>
+          <div class="radio">
+            <input class="hidden-xs-up"  type="radio" name="resident" id="other">
+            <label for="other" class="radio-label">Иное</label>
+          </div>
           <h4>Контактная информация:</h4>
           <input placeholder="Электронная почта" type="text">
           <input placeholder="Пароль" type="text">
@@ -26,7 +32,11 @@
           <button title="Добавить">Добавить</button>
         </div>
         <div class="agree-and-go animated bounceInLeft">
-          <input type="checkbox"> Я согласен и принимаю <a href="#">условия договора</a> <br>
+          <div>
+            <input class="hidden-xs-up" id="cbx" type="checkbox">
+            <label class="cbx" for="cbx"></label>
+            <label class="lbl" for="cbx"> Я согласен и принимаю <a href="#">условия договора</a></label>
+          </div>
           <button type="submit">Сохранить</button>
         </div>
       </div>
