@@ -1,8 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700&amp;subset=cyrillic" rel="stylesheet"')
+@import 'assets/_fonts'
+@import 'assets/_test-reset'
+@import "assets/animate"
+div
+  -webkit-transition: all 700ms ease-in
+  -moz-transition: all 700ms ease-in
+  -ms-transition: all 700ms ease-in
+  -o-transition: all 700ms ease-in
+  transition: all 700ms ease-in
 
-$caption-font: 'Oswald', sans-serif
+.input-block
+  border: 1px solid #a9a9a9
+  display: inline-block
+  +margin-bottom-15
+  input[type=text]
+    border: none
+    outline: none
+    +margin-0
 
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
-  font-family: 'Oswald', sans-serif
-  font-weight: 500
+.block
+  +inline-block
+  div &input
