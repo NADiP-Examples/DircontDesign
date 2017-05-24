@@ -2,39 +2,39 @@
 <button (click)="reset()">Reset</button>
 <div class="userblock">
   <h4>Ваши данные:</h4>
-  <div *ngIf="user_data_status === 'closed'">
-    <input (focus)="user_data_status='opened'" placeholder="Иванов   Иван   Иванович">
+  <div *ngIf="user_data_status === 'closed'" class="input-dotted-overflow">
+    <input (focus)="user_data_status='opened'" placeholder="Иванов" type="text">
+    <input (focus)="user_data_status='opened'" placeholder="Иван" type="text">
+    <input (focus)="user_data_status='opened'" placeholder="Иванович" type="text">
   </div>
   <div *ngIf="user_data_status === 'opened'">
-    <div class="12 block animated bounceIn">
+    <div class="block">
       <form #userDataForm="ngForm" (submit)="$event.preventDefault();saveUserData(userDataForm)">
-        <div (keyup)="onKeyUp($event)" class="input-block">
-          <input placeholder="Иванов   Иван   Иванович" type="text" size="20" maxlength="20"
-                 onkeydown="size=value.length||5" onkeyup="onkeydown()" onkeypress="onkeydown()" onchange="onkeydown()">
-          <input type="text" size="10" maxlength="20" onkeydown="size=value.length||10" onkeyup="onkeydown()"
-                 onkeypress="onkeydown()" onchange="onkeydown()">
-          <input type="text" size="10" maxlength="20" onkeydown="size=value.length||10" onkeyup="onkeydown()"
-                 onkeypress="onkeydown()" onchange="onkeydown()">
+        <div (keyup)="onKeyUp($event)" class="input-dotted-overflow">
+          <input placeholder="Иванов" type="text">
+          <input placeholder="Иван" type="text">
+          <input placeholder="Иванович" type="text">
         </div>
-        <h4>Резидентство:</h4>
-        <input type="radio" name="resident"> Резидент РФ
-        <input type="radio" name="resident"> Иное<br>
-        <h4>Контактная информация:</h4>
-        <input placeholder="Электронная почта" type="text">
-        <input placeholder="Пароль" type="text">
-        <button placeholder="Редактировать">Изменить</button>
-        <br>
-        <input placeholder="Номер телефона" type="tel">
-        <button title="Добавить">Добавить</button>
-        <div class="agree-and-go">
+        <div class="animated bounceIn">
+          <h4>Резидентство:</h4>
+          <input type="radio" name="resident"> Резидент РФ
+          <input type="radio" name="resident"> Иное<br>
+          <h4>Контактная информация:</h4>
+          <input placeholder="Электронная почта" type="text">
+          <input placeholder="Пароль" type="text">
+          <button placeholder="Редактировать">Изменить</button>
+          <br>
+          <input placeholder="Номер телефона" type="tel">
+          <button title="Добавить">Добавить</button>
+        </div>
+        <div class="agree-and-go animated bounceInLeft">
           <input type="checkbox"> Я согласен и принимаю <a href="#">условия договора</a> <br>
           <button type="submit">Сохранить</button>
         </div>
       </form>
     </div>
   </div>
-  <hr>
-  <div *ngIf="user_data_status === 'saved'" class="13 animated ">
+  <div *ngIf="user_data_status === 'saved'">
     <!--<h4>Ваши данные:</h4>-->
     <h2>Иванов Иван Иванович <span class="user-id">(ID:<b>486672</b>)</span></h2>
     <p>Резидентство: <span class="res-id bold">Резидент РФ</span></p>
