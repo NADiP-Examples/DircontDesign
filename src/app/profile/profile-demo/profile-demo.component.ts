@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { close } from "fs";
+
+type user_data_status_type = "closed" | "opened" | "saved";
 
 @Component({
   // selector: 'app-profile-demo',
@@ -6,6 +9,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./profile-demo.component.sass']
 })
 export class ProfileDemoComponent implements OnInit {
+  user_data_status:user_data_status_type = "closed";
   constructor() { }
 
   ngOnInit() {
@@ -15,6 +19,14 @@ export class ProfileDemoComponent implements OnInit {
     if (event.keyCode === 32){
       event.target.nextElementSibling?event.target.nextElementSibling.focus(): '';
     }
+  }
+
+  saveUserData(form){
+    this.user_data_status = "saved";
+  }
+
+  reset(){
+    this.user_data_status = "closed";
   }
 
 }
