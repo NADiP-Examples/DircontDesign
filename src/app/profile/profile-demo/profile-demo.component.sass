@@ -1,6 +1,7 @@
 @import 'assets/_fonts'
 @import 'assets/_test-reset'
 @import "assets/animate"
+@import "assets/_color"
 div
   -webkit-transition: all 700ms ease-in
   -moz-transition: all 700ms ease-in
@@ -17,104 +18,28 @@ div
     width: 150px
     outline: none
 
+.info-block
+  +margin-bottom-20
 
-// Chekbox
-$color1: #fff
-$color2: #ecba00
+.icon-button
+  +bg-none
+  +bd-none
+  color: darken($color1, 70%)
 
-.radio
+.icon-block
   +inline-block
-  +margin-right-15
-  cursor: pointer
-  input[type="radio"]
-    position: absolute
-    opacity: 0
-    + .radio-label
-      &:before
-        content: ''
-        background: $color1
-        border-radius: 100%
-        border: 2px solid $color2
-        display: inline-block
-        width: 20px
-        height: 20px
-        position: relative
-        top: 2px
-        margin-right: 5px
-        vertical-align: top
-        cursor: pointer
-        text-align: center
-        transition: all 250ms ease
-    &:checked
-      + .radio-label
-        &:before
-          background-color: $color2
-          box-shadow: inset 0 0 0 3px $color1
-    &:focus
-      + .radio-label
-        &:before
-          outline: none
-          border-color: $color2
-    &:disabled
-      + .radio-label
-        &:before
-          box-shadow: inset 0 0 0 4px $color1
-          border-color: darken($color1, 25%)
-          background: darken($color1, 25%)
-    + .radio-label
-      &:empty
-        &:before
-          margin-right: 0
+  width: 25px
+  text-align: center
+  color: darken($color1, 70%)
+  font-size: 18px
+  margin-right: 5px
 
-.cbx
-  position: relative
-  width: 17px
-  height: 17px
-  border: 1px solid #C8CCD4
-  border-radius: 3px
-  vertical-align: middle
-  transition: background .1s ease
-  cursor: pointer
-  &:after
-    content: ''
-    position: absolute
-    top: 1px
-    left: 5px
-    width: 5px
-    height: 11px
-    opacity: 0
-    transform: rotate(45deg) scale(0)
-    border-right: 2px solid white
-    border-bottom: 2px solid white
-    transition: all .3s ease
-    transition-delay: .15s
+.yellow-font
+  color: $color2
 
+.grey-font
+  color: darken($color1,20%)
 
-.lbl
-  margin-left: 5px
-  vertical-align: middle
-  cursor: pointer
-
-#cbx:checked ~ .cbx
-  border-color: transparent
-  background: #53c194
-  animation: jelly .6s ease
-  &:after
-    opacity: 1
-    transform: rotate(45deg) scale(1)
-
-@keyframes jelly
-  from
-    transform: scale(1, 1)
-  30%
-    transform: scale(1.25, 0.75)
-  40%
-    transform: scale(0.75, 1.25)
-  50%
-    transform: scale(1.15, 0.85)
-  65%
-    transform: scale(.95, 1.05)
-  75%
-    transform: scale(1.05, .95)
-  to
-    transform: scale(1, 1)
+h2 .fa
+  margin-left: 10px
+  font-size: 0.7em

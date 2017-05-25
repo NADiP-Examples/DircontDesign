@@ -1,13 +1,34 @@
+@import "_color"
+
 // Переменные
 
+// Фон и обводка
+
+=white-bg
+  background: $color1
+
+=yellow-bg
+  background: $color2
+
+=bg-none
+  background: none
+
+=bd-none
+  border: none
 
 // Отступы
+
+=margin-bottom-20
+  margin-bottom: 20px
 
 =margin-bottom-15
   margin-bottom: 15px
 
 =margin-right-15
   margin-right: 15px
+
+.mg-left-10
+  margin-left: 10px
 
 =margin-0
   margin: 0
@@ -31,6 +52,10 @@
 =uppercase
   text-transform: uppercase
 
+.bold
+  font-weight: bold
+  +caption-font-medium
+
 // New values ​​of inputs
 
 input
@@ -43,3 +68,102 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
  +caption-font-medium
  +margin-bottom-15
 
+
+// Chekbox and radio
+
+.radio
+  +inline-block
+  +margin-right-15
+  cursor: pointer
+  input[type="radio"]
+    position: absolute
+    opacity: 0
+    + .radio-label
+      &:before
+        content: ''
+        background: $color1
+        border-radius: 100%
+        border: 2px solid $color2
+        display: inline-block
+        width: 20px
+        height: 20px
+        position: relative
+        top: 2px
+        margin-right: 5px
+        vertical-align: top
+        cursor: pointer
+        text-align: center
+        transition: all 250ms ease
+    &:checked
+      + .radio-label
+        &:before
+          background-color: $color2
+          box-shadow: inset 0 0 0 3px $color1
+    &:focus
+      + .radio-label
+        &:before
+          outline: none
+          border-color: $color2
+    &:disabled
+      + .radio-label
+        &:before
+          box-shadow: inset 0 0 0 4px $color1
+          border-color: darken($color1, 25%)
+          background: darken($color1, 25%)
+    + .radio-label
+      &:empty
+        &:before
+          margin-right: 0
+
+.cbx
+  position: relative
+  width: 17px
+  height: 17px
+  border: 1px solid #C8CCD4
+  border-radius: 3px
+  vertical-align: middle
+  transition: background .1s ease
+  cursor: pointer
+  &:after
+    content: ''
+    position: absolute
+    top: 1px
+    left: 5px
+    width: 5px
+    height: 11px
+    opacity: 0
+    transform: rotate(45deg) scale(0)
+    border-right: 2px solid white
+    border-bottom: 2px solid white
+    transition: all .3s ease
+    transition-delay: .15s
+
+
+.lbl
+  margin-left: 5px
+  vertical-align: middle
+  cursor: pointer
+
+#cbx:checked ~ .cbx
+  border-color: transparent
+  background: $color3
+  animation: jelly .6s ease
+  &:after
+    opacity: 1
+    transform: rotate(45deg) scale(1)
+
+@keyframes jelly
+  from
+    transform: scale(1, 1)
+  30%
+    transform: scale(1.25, 0.75)
+  40%
+    transform: scale(0.75, 1.25)
+  50%
+    transform: scale(1.15, 0.85)
+  65%
+    transform: scale(.95, 1.05)
+  75%
+    transform: scale(1.05, .95)
+  to
+    transform: scale(1, 1)

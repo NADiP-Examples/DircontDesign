@@ -13,23 +13,27 @@
       </div>
       <!-- Status 1-2 -->
       <div *ngIf="user_data_status === 'opened' || user_data_status === 'saved_animate'">
-        <div class="animated bounceIn">
-          <h4>Резидентство:</h4>
-          <div class="radio">
-            <input class="hidden-xs-up"  type="radio" name="resident" id="resident-rf">
-            <label for="resident-rf" class="radio-label">Резидент РФ</label>
+        <div class="animated bounceInDown">
+          <div class="info-block">
+            <h4>Резидентство:</h4>
+            <div class="radio">
+              <input class="hidden-xs-up"  type="radio" name="resident" id="resident-rf">
+              <label for="resident-rf" class="radio-label">Резидент РФ</label>
+            </div>
+            <div class="radio">
+              <input class="hidden-xs-up"  type="radio" name="resident" id="other">
+              <label for="other" class="radio-label">Иное</label>
+            </div>
           </div>
-          <div class="radio">
-            <input class="hidden-xs-up"  type="radio" name="resident" id="other">
-            <label for="other" class="radio-label">Иное</label>
+          <div class="info-block">
+            <h4>Контактная информация:</h4>
+            <i class="fa fa-mobile icon-block"></i><input placeholder="Номер телефона" type="tel">
+            <button title="Добавить" class="icon-button"><i class="fa fa-plus"></i></button>
+            <br>
+            <i class="fa fa-at icon-block"></i><input placeholder="Электронная почта" type="text">
+            <input placeholder="Пароль" type="text">
+            <button placeholder="Редактировать" class="icon-button"><i class="fa fa-pencil"></i></button>
           </div>
-          <h4>Контактная информация:</h4>
-          <input placeholder="Электронная почта" type="text">
-          <input placeholder="Пароль" type="text">
-          <button placeholder="Редактировать">Изменить</button>
-          <br>
-          <input placeholder="Номер телефона" type="tel">
-          <button title="Добавить">Добавить</button>
         </div>
         <div class="agree-and-go animated bounceInLeft">
           <div>
@@ -46,15 +50,16 @@
   <!-- END Status 1-1 -->
 
   <!-- Status 1-3 -->
-  <div *ngIf="user_data_status === 'saved'">
+  <div *ngIf="user_data_status === 'saved'" class="animated bounceInDown">
     <!--<h4>Ваши данные:</h4>-->
-    <h2>Иванов Иван Иванович <span class="user-id">(ID:<b>486672</b>)</span></h2>
-    <p>Резидентство: <span class="res-id bold">Резидент РФ</span></p>
-    <p>Номер телефона: <span class="user-phone bold">8 923 623 7634</span></p>
-    <p>Электронная почта: <span class="user-mail bold">ivanov@testmail.com</span></p>
+    <h2>Иванов Иван Иванович<span class="user-id"> (ID:<b>486672</b>)</span><i class="fa fa-pencil grey-font"></i></h2>
+    <p><i class="fa fa-flag icon-block yellow-font"></i><span class="res-id bold">Резидент РФ</span><i class="fa fa-pencil grey-font mg-left-10"></i></p>
+    <p><i class="fa fa-mobile icon-block yellow-font"></i><span class="user-phone bold">8 923 623 7634</span><i class="fa fa-pencil grey-font mg-left-10"></i></p>
+    <p><i class="fa fa-at icon-block yellow-font"></i><span class="user-mail bold">ivanov@testmail.com</span><i class="fa fa-pencil grey-font mg-left-10"></i></p>
   </div>
   <!-- END Status 1-3 -->
 </div>
+<hr>
 <div class="corporate-block">
   <div class="11">
 
