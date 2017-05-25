@@ -41,7 +41,7 @@
             <label class="cbx" for="cbx"></label>
             <label class="lbl" for="cbx"> Я согласен и принимаю <a href="#">условия договора</a></label>
           </div>
-          <button type="submit">Сохранить</button>
+          <button type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
       </div>
       <!-- END Status 1-2 -->
@@ -51,25 +51,68 @@
 
   <!-- Status 1-3 -->
   <div *ngIf="user_data_status === 'saved'" class="animated bounceInDown">
-    <!--<h4>Ваши данные:</h4>-->
-    <h2>Иванов Иван Иванович<span class="user-id"> (ID:<b>486672</b>)</span><i class="fa fa-pencil grey-font"></i></h2>
-    <p><i class="fa fa-flag icon-block yellow-font"></i><span class="res-id bold">Резидент РФ</span><i class="fa fa-pencil grey-font mg-left-10"></i></p>
-    <p><i class="fa fa-mobile icon-block yellow-font"></i><span class="user-phone bold">8 923 623 7634</span><i class="fa fa-pencil grey-font mg-left-10"></i></p>
-    <p><i class="fa fa-at icon-block yellow-font"></i><span class="user-mail bold">ivanov@testmail.com</span><i class="fa fa-pencil grey-font mg-left-10"></i></p>
+    <h2>Иванов Иван Иванович<span class="user-id"> (ID:<b>486672</b>)</span></h2>
+    <p><i class="fa fa-flag icon-block yellow-font"></i><span class="res-id bold">Резидент РФ</span></p>
+    <p><i class="fa fa-mobile icon-block yellow-font"></i><span class="user-phone bold">8 923 623 7634</span></p>
+    <p><i class="fa fa-at icon-block yellow-font"></i><span class="user-mail bold">ivanov@testmail.com</span></p>
+    <button placeholder="Редактировать"><i class="fa fa-pencil"></i> Редактировать</button>
   </div>
   <!-- END Status 1-3 -->
 </div>
 <hr>
 <div class="corporate-block">
-  <div class="11">
-
+  <h4>Данные о компании:</h4>
+  <!-- Status 1-1 -->
+  <div>
+    <form class="animated">
+      <div class="input-dotted-overflow">
+        <label>ИП </label>
+        <input placeholder="Иванов" type="text">
+        <input placeholder="Иван" type="text">
+        <input placeholder="Иванович" type="text">
+      </div>
+      <!-- Status 1-2 -->
+      <div class="input-dotted-overflow info-block">
+        <label class="h5">Серия паспорта: </label><input placeholder="1234" type="text" class="passport_series">
+        <label>Номер </label><input placeholder="123456" type="text" class="passport_num">
+        <label>Код подразделения </label><input placeholder="000-000" type="text" class="passport_code">
+        <label>Дата выдачи </label><input type="date" class="passport_date"><br>
+        <label>Кем выдан </label><br>
+        <input placeholder="УВД Центрального района Кемеровской области" type="text" class="passport_place">
+      </div>
+      <div class="input-dotted-overflow info-block">
+        <h5>Адрес регистрации / проживания: </h5>
+        <label>Индекс </label><input placeholder="000000" type="text" class="passport_num">
+        <label>Населенный пункт </label><input placeholder="Новокузнецк" type="text" class="passport_num">
+        <label>Кем выдан </label>
+        <input placeholder="УВД Центрального района Кемеровской области" type="text" class="passport_place"></p>
+      </div>
+      <div>
+        <div class="agree-and-go animated bounceInLeft">
+          <div>
+            <input class="hidden-xs-up" id="cbx" type="checkbox">
+            <label class="cbx" for="cbx"></label>
+            <label class="lbl" for="cbx"> Я согласен и принимаю <a href="#">условия договора</a></label>
+          </div>
+          <button type="submit"><i class="fa fa-check"></i> Сохранить</button>
+        </div>
+      </div>
+      <!-- END Status 1-2 -->
+    </form>
   </div>
-  <div class="12">
-
+  <!-- END Status 1-1 -->
+ <hr>
+  <!-- Status 1-3 -->
+  <div class="animated bounceInDown">
+    <!--<h4>Ваши данные:</h4>-->
+    <h2>Иванов Иван Иванович<span class="user-id"> (ID:<b>486672</b>)</span></h2>
+    <p><i class="fa fa-flag icon-block yellow-font"></i><span class="res-id bold">Резидент РФ</span></p>
+    <p><i class="fa fa-mobile icon-block yellow-font"></i><span class="user-phone bold">8 923 623 7634</span></p>
+    <p><i class="fa fa-at icon-block yellow-font"></i><span class="user-mail bold">ivanov@testmail.com</span></p>
+    <button placeholder="Редактировать"><i class="fa fa-pencil"></i> Редактировать</button>
   </div>
-  <div class="13">
-
+  <!-- END Status 1-3 -->
+  <hr>
   </div>
-</div>
 
 <!--<button class="btn btn-primary">Test Button</button>-->

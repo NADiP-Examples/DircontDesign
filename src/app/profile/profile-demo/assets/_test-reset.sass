@@ -8,7 +8,7 @@
   background: $color1
 
 =yellow-bg
-  background: $color2
+  background: $color2 !important
 
 =bg-none
   background: none
@@ -17,6 +17,9 @@
   border: none
 
 // Отступы
+
+=margin-bottom-30
+  margin-bottom: 30px
 
 =margin-bottom-20
   margin-bottom: 20px
@@ -27,14 +30,26 @@
 =margin-right-15
   margin-right: 15px
 
-.mg-left-10
+=mg-left-10
   margin-left: 10px
+
+.mg-left-10
+  +mg-left-10
 
 =margin-0
   margin: 0
 
 =padding-0
   padding: 0
+
+=pd-bottom-5
+  padding-bottom: 5px
+
+=pd-left-5
+  padding-left: 5px
+
+=pd-left-10
+  padding-left: 10px
 
 // Display
 
@@ -52,7 +67,7 @@
 =uppercase
   text-transform: uppercase
 
-.bold
+.bold, label
   font-weight: bold
   +caption-font-medium
 
@@ -62,12 +77,19 @@ input
  padding: 5px 10px
  margin: 0 0 15px
 
+input[type=date]
+  background: lighten($color2,30%)
+  +mg-left-10
+  +bd-none
+
 // New values ​​of captions
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+h1, h2, h3, h4, .h1, .h2, .h3, .h4
  +caption-font-medium
  +margin-bottom-15
 
+h5, h6, .h5, .h6
+  +caption-font-medium
 
 // Chekbox and radio
 
