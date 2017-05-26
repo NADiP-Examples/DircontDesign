@@ -1,23 +1,29 @@
-@import "_color"
+@import "color"
 @import "animate"
+@import "fonts"
 // Переменные
 
 =pointer
   cursor: pointer
+.pointer
+  +pointer
 
 // Фон и обводка
 
 =white-bg
-  background: $color1
+  background: $color1 !important
 
 =yellow-bg
   background: $color2 !important
 
+=blue-bg
+  background: $color3 !important
+
 =bg-none
-  background: none
+  background: none !important
 
 =bd-none
-  border: none
+  border: none !important
 
 =radius-3
   border-radius: 3px
@@ -25,40 +31,40 @@
 // Отступы
 
 =margin-bottom-30
-  margin-bottom: 30px
+  margin-bottom: 30px !important
 
 =margin-bottom-20
-  margin-bottom: 20px
+  margin-bottom: 20px !important
 
 =margin-bottom-15
-  margin-bottom: 15px
+  margin-bottom: 15px !important
 
 =margin-right-15
-  margin-right: 15px
+  margin-right: 15px !important
 
 =mg-left-10
-  margin-left: 10px
+  margin-left: 10px !important
 
 .mg-left-10
   +mg-left-10
 
 =margin-0
-  margin: 0
+  margin: 0 !important
 
 =padding-0
-  padding: 0
+  padding: 0 !important
 
 =padding-5-10
-  padding: 5px 10px
+  padding: 5px 10px !important
 
 =pd-bottom-5
-  padding-bottom: 5px
+  padding-bottom: 5px !important
 
 =pd-left-5
-  padding-left: 5px
+  padding-left: 5px !important
 
 =pd-left-10
-  padding-left: 10px
+  padding-left: 10px !important
 
 // Display
 
@@ -79,11 +85,25 @@
 =txt-shadow
   text-shadow: 1px 1px 0px darken($color1,50%)
 
-.bold, label
+.bold, label, .nav
   font-weight: bold
   +caption-font-medium
 
-// New values ​​of inputs
+=f-size-1-5
+  font-size: 1.5em
+
+.f-size-1-5
+  +f-size-1-5
+
+.navbar-brand
+  +caption-font-regular
+  +uppercase
+
+
+body
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+
+// Inputs
 
 input
  padding: 5px 10px
@@ -117,7 +137,7 @@ h5, h6, .h5, .h6
         content: ''
         background: $color1
         border-radius: 100%
-        border: 2px solid $color2
+        border: 2px solid $color3
         display: inline-block
         width: 20px
         height: 20px
@@ -131,13 +151,13 @@ h5, h6, .h5, .h6
     &:checked
       + .radio-label
         &:before
-          background-color: $color2
+          background-color: $color3
           box-shadow: inset 0 0 0 3px $color1
     &:focus
       + .radio-label
         &:before
           outline: none
-          border-color: $color2
+          border-color: $color3
     &:disabled
       + .radio-label
         &:before
@@ -153,7 +173,7 @@ h5, h6, .h5, .h6
   position: relative
   width: 17px
   height: 17px
-  border: 1px solid #C8CCD4
+  border: 1px solid darken($color1,40%)
   border-radius: 3px
   vertical-align: middle
   transition: background .1s ease
@@ -223,3 +243,16 @@ h5, h6, .h5, .h6
   +bg-none
   +bd-none
   font-size: 0.8em
+
+nav
+  +padding-0
+  .container
+    +bd-none
+
+.nav-link
+  padding: 5px 0
+  color: darken($color1,80%) !important
+
+.left-menu
+  background: darken($color1,5%)
+  padding-top: 10px

@@ -1,5 +1,5 @@
 <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
-<button (click)="reset()">Reset</button>
+<button class="icon-button" (click)="reset()"><i class="fa fa-refresh icon-block pointer yellow-font"></i></button>
 <div class="userblock">
   <h4>Ваши данные:</h4>
   <!-- Status 1-1 -->
@@ -32,6 +32,7 @@
             <button title="Добавить" class="icon-button"><i class="fa fa-plus"></i></button>
             <br>
             <i class="fa fa-at icon-block"></i><input placeholder="Электронная почта" type="text">
+            <button class="icon-button"><i class="fa fa-pencil"></i></button>
             <input placeholder="Пароль" type="text">
             <button class="icon-button"><i class="fa fa-pencil"></i></button>
           </div>
@@ -54,7 +55,7 @@
   <div *ngIf="user_data_status === 'saved'" class="animated fadeIn">
     <h2>Иванов Иван Иванович<span class="user-id"> (ID:<b>486672</b>)</span></h2>
     <p><i class="fa fa-flag icon-block yellow-font"></i><span class="res-id bold">Резидент РФ</span></p>
-    <p><i class="fa fa-mobile icon-block yellow-font"></i><span class="user-phone bold">8 923 623 7634</span></p>
+    <p><i class="fa fa-mobile icon-block yellow-font"></i><span class="user-phone bold">8 923 623 7634</span><span class="yellow-font f-size-1-5"> / </span><span class="user-phone bold">8 913 623 6344</span><span class="yellow-font f-size-1-5"> / </span><span class="user-phone bold">8 900 613 7688</span> </p>
     <p><i class="fa fa-at icon-block yellow-font"></i><span class="user-mail bold">ivanov@testmail.com</span></p>
     <button (click)="userDataEdit()" class="btn-primary"><i class="fa fa-pencil"></i> Редактировать</button>
   </div>
@@ -93,7 +94,7 @@
       <!-- Физ.лицо -->
       <div *ngIf="legal_status == 'natural_person'">
         <div class="input-dotted-overflow animated bounceInLeft">
-          <input placeholder="Иванов" type="text">
+          <label>ФИО </label><input placeholder="Иванов" type="text">
           <input placeholder="Иван" type="text">
           <input placeholder="Иванович" type="text"><br>
           <label>ИНН </label><input placeholder="1234567890" type="text">
@@ -160,14 +161,15 @@
       <!-- Юр.лицо -->
       <div *ngIf="legal_status == 'legal_entity'">
         <div class="input-dotted-overflow animated bounceInLeft">
-          <label>Организационно-правовая форма </label><input placeholder="ОАО" type="text" class="">
+          <label>ОПФ </label><input placeholder="ОАО" type="text" class="">
           <label>Полное название организации </label><input placeholder="СтройКопай" type="text" class=""> <br>
           <label>ИНН </label><input placeholder="1234567890" type="text">
           <label>КПП </label><input placeholder="1234567890" type="text">
           <label>ОРН </label><input placeholder="1234567890" type="text">
         </div>
         <div class="input-dotted-overflow info-block animated bounceInRight">
-          <label>Уполномоченное лицо </label> <br>
+          <h5>Уполномоченное лицо:</h5>
+          <label>ФИО </label>
           <input placeholder="Иванов" type="text">
           <input placeholder="Иван" type="text">
           <input placeholder="Иванович" type="text"><br>

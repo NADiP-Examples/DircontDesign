@@ -2,7 +2,7 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 
 
 @Component({
-  selector: 'top-menu',
+  selector: 'status-bar',
   templateUrl: './top-menu.component.html',
   styleUrls: ['./top-menu.component.sass'],
 })

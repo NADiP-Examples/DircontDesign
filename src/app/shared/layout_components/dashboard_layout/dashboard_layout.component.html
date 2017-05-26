@@ -1,16 +1,18 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" [routerLink]="['']">Dircont</a>
-  <button>{{user.type | titleFrom: ROLES}}</button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <top-menu style="width: 100%" [menu_items]="top_menu_items" [menu_disabled]="disabled"></top-menu>
-    <button class="btn btn-primary" (click)="authService.logout()">
-      Выйти
-    </button>
+  <div class="container">
+    <div class="col-sm-11">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" [routerLink]="['']">Dircont</a>
+    </div>
+    <div class="col-sm-1" id="navbarSupportedContent">
+      <button class="btn btn-primary" (click)="authService.logout()">
+        Выйти
+      </button>
+    </div>
   </div>
 </nav>
 <div class="container">
@@ -18,6 +20,9 @@
     <!--<div class="col-2">-->
       <!--<left-menu [menu_items]="left_menu_items" [menu_disabled]="disabled" ></left-menu>-->
     <!--</div>-->
+    <div class="col-2 left-menu">
+      <left-menu style="width: 100%" [menu_items]="top_menu_items" [menu_disabled]="disabled"></left-menu>
+    </div>
     <div class="col-10">
       <router-outlet></router-outlet>
     </div>

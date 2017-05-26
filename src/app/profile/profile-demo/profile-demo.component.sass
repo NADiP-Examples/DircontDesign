@@ -1,7 +1,5 @@
-@import 'assets/_fonts'
-@import 'assets/_test-reset'
-@import "assets/animate"
-@import "assets/_color"
+@import "assets/sass/parts/_test-reset"
+
 div
   -webkit-transition: all 700ms ease-in
   -moz-transition: all 700ms ease-in
@@ -40,9 +38,9 @@ div
 .grey-font
   color: darken($color1,20%)
 
-h2 .fa
-  margin-left: 10px
-  font-size: 0.7em
+h2
+  b
+    border-bottom: 2px solid $color2
 
 .passport-series
   width: 60px!important
@@ -55,7 +53,7 @@ h2 .fa
 
 .passport-place
   +block
-  width: 100% !important
+  width: 70% !important
 
 .corporate-block
   .info-block
