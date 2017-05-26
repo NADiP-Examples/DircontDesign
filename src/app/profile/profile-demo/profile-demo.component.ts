@@ -16,9 +16,9 @@ export class ProfileDemoComponent implements OnInit {
   //   if (input_second_name) input_second_name.nativeElement.focus();
   // }
 
-  user_data_status: states = "saved";
-  company_data_status: states = "opened";
-  company_visible: boolean = true;
+  user_data_status: states = "closed";
+  company_data_status: states = "closed";
+  company_visible: boolean = false;
   legal_status = '';
 
   constructor() {
