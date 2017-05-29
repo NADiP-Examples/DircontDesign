@@ -14,10 +14,10 @@
           #userDataForm="ngForm" (submit)="$event.preventDefault();saveUserData(userDataForm)">
       <div (keyup)="onKeyUp($event)" class="input-dotted-overflow">
         <input (focus)="user_data_status='opened'" placeholder="Иванов" type="text" required
-               [(ngModel)]="user.second_name" name="second_name" #second_name="ngModel"><i>*</i>
+               [(ngModel)]="user.second_name" name="second_name" #second_name="ngModel"><b>*</b>
 
         <input (focus)="user_data_status='opened'" placeholder="Иван" type="text" required
-               [(ngModel)]="user.first_name" name="first_name" #first_name="ngModel"><i>*</i>
+               [(ngModel)]="user.first_name" name="first_name" #first_name="ngModel"><b>*</b>
         <input (focus)="user_data_status='opened'" placeholder="Иванович" type="text">
       </div>
       <!-- Status 1-2 -->
@@ -41,9 +41,9 @@
             <button title="Добавить" class="icon-button"><i class="fa fa-plus"></i></button>
             <br>
             <i class="fa fa-at icon-block"></i>
+            <label class="error" *ngIf="email.errors?.email">Неправильный email</label>
             <input placeholder="Электронная почта" type="email" required email
-                   [(ngModel)]="user.email" name="email" #email="ngModel">
-            <span class="error" *ngIf="email.errors?.email">Невалидный email</span>
+                   [(ngModel)]="user.email" name="email" #email="ngModel"><b>*</b>
             <button class="icon-button"><i class="fa fa-pencil"></i></button>
             <input placeholder="Пароль" type="text">
             <button class="icon-button"><i class="fa fa-pencil"></i></button>
@@ -150,17 +150,14 @@
         <div class="input-dotted-overflow animated bounceInLeft">
           <label>ИП </label>
           <input placeholder="Иванов" type="text" required>
-          <li>*</li>
+          <b>*</b>
           <input placeholder="Иван" type="text" required>
-          <li>*</li>
+          <b>*</b>
           <input placeholder="Иванович" type="text"><br>
           <label>ИНН </label>
           <input placeholder="1234567890" type="text" required
                  [(ngModel)]="company.itn" name="itn" #itn="ngModel"
                  [rangeLength]="[12, 12]">
-          <div *ngIf="itn.touched && itn.errors?.required" class="error">
-            Не может быть пустым
-          </div>
           <div class="error" *ngIf="itn.touched && itn.errors?.rangeLength">
             12 цифр
           </div>

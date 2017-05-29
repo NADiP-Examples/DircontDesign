@@ -146,12 +146,17 @@ input[type=date]
     &:required
       &::after
         content: "afdsd"
-  i
+
+form
+  b
     margin: 0 20px 0 -20px
     color: adjust-hue($color2, -50deg)
+    font-weight: 500
 
-
-
+label.error
+  position: absolute
+  margin-top: 40px
+  font-size: 11px!important
 
 // New values ​​of captions
 
@@ -356,13 +361,16 @@ li.active
   border-width: 1px !important
 
 span.num
-  background: #fb7f36
-  font-size: 10px
-  line-height: 10px
+  background: #ffec05
+  font-size: 9px
   margin-left: -3px
   font-weight: 900
   padding: 2px 5px
-  position: absolute
-  border: 2px solid #292b2c
+  border: 1px solid #292b2c
   color: #292b2c
   border-radius: 13px
+
+.navbar-nav
+  float: right
+  li
+    margin: 0 10px
