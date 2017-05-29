@@ -13,15 +13,29 @@ export const TOP_MENU_ITEMS = {
   admin_of_user: [
     {
       link: '/profile',
-      label: 'Личные данные'
+      label: 'Личные данные',
     },
     {
       link: '/profile/demo',
-      label: 'Личные данные(Demo)'
+      label: 'Личные данные(Demo)',
+      sub_items: [{
+        link: '/profile/demo/one',
+        label: 'Подпункт-1',
+      }, {
+        link: '/profile/demo/two',
+        label: 'Подпункт-2',
+      }, {
+        link: '/profile/demo/three',
+        label: 'Подпункт-3',
+      }]
     },
     {
       link: '/employees',
-      label: 'Сотрудники'
+      label: 'Сотрудники',
+      sub_items: [{
+        link: '/employees/list',
+        label: 'Список сотрудников',
+      }, ]
     },
     {
       link: '/black-white-list',

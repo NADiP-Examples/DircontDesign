@@ -1,8 +1,16 @@
 <ul class="nav flex-column left-menu">
-  <li class="nav-item header">
-    Реестры:
-  </li>
   <li *ngFor="let item of menu_items">
-    <a [ngClass]="{disabled:menu_disabled}" class="nav-link" [routerLink]="[item.link]" [routerLinkActive]="['active']">{{item.label}}</a>
+    <a class="nav-link" [routerLink]="[item.link]"
+       [routerLinkActive]="['active']"
+       [routerLinkActiveOptions]="{ exact: true }">
+      {{item.label}}
+    </a>
+    <ul *ngFor="let sub_item of item.sub_items">
+      <li>
+        <a class="nav-link" [routerLink]="[sub_item.link]" [routerLinkActive]="['active']">
+          {{sub_item.label}}
+        </a>
+      </li>
+    </ul>
   </li>
 </ul>
