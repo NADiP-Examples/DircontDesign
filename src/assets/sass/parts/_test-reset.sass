@@ -8,6 +8,7 @@
 .pointer
   +pointer
 
+
 // Фон и обводка
 
 =white-bg
@@ -48,6 +49,9 @@
 .mg-left-10
   +mg-left-10
 
+=margin-top-10
+  margin-top: 10px
+
 =margin-0
   margin: 0 !important
 
@@ -57,16 +61,25 @@
 =padding-5-10
   padding: 5px 10px !important
 
+=pd-20
+  padding: 20px
+
+.pd-20
+  +pd-20
+
 =pd-bottom-5
   padding-bottom: 5px !important
 
 =pd-left-5
   padding-left: 5px !important
 
+=pd-left-40
+  padding-left: 40px
+
 =pd-left-10
   padding-left: 10px !important
 
-// Display
+// Display and position
 
 =block
   display: block
@@ -77,6 +90,8 @@
 =none
   display: none
 
+=absolute
+  position: absolute
 // Text
 
 =uppercase
@@ -254,5 +269,21 @@ nav
   color: darken($color1,80%) !important
 
 .left-menu
-  background: darken($color1,5%)
+  background: darken($color1,2%)
   padding-top: 10px
+  height: 100vh
+
+a.nav-link.active
+  background: $color3 !important
+  color: darken($color1,80%)!important
+  margin: 0 -15px
+  padding: 10px 15px
+  border-left: 3px solid
+  &:after
+    content: " "
+    border-right: 10px solid
+    border-top: 15px solid transparent
+    display: block
+    float: right
+    border-bottom: 15px solid transparent
+

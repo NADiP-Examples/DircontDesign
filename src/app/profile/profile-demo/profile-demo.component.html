@@ -1,7 +1,11 @@
 <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
-<button class="icon-button" (click)="reset()"><i class="fa fa-refresh icon-block pointer yellow-font"></i></button>
 <div class="userblock">
-  <h4>Ваши данные:</h4>
+  <div class="advice">
+    <i class="fa fa-exclamation animated jello"></i>
+    Добро пожаловать на Dircount.com!
+    Для начала работы вам необходимо заполнить некоторые данные о себе.
+  </div>
+  <h4>Ваши данные:<button class="icon-button" (click)="reset()"><i class="fa fa-refresh icon-block pointer yellow-font"></i></button></h4>
   <!-- Status 1-1 -->
   <div *ngIf="user_data_status != 'saved'">
     <form class="animated" [ngClass]="{fadeOut:user_data_status === 'saved_animate'}"
@@ -63,6 +67,10 @@
 </div>
 <hr>
 <div class="corporate-block animated bounceInDown" *ngIf="company_visible">
+  <div class="advice animated jello">
+    <i class="fa fa-exclamation animated jello"></i>
+    Отличная работа! Теперь расскажите подробнее о вашей компании!
+  </div>
   <h4>Данные о компании:</h4>
   <!-- Status 2-1 -->
   <form class="animated" [ngClass]="{fadeOut:company_data_status === 'saved_animate'}"
