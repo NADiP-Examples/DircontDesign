@@ -1,13 +1,13 @@
 <ul class="nav flex-column left-menu">
-  <li *ngFor="let item of menu_items">
-    <a class="nav-link" [routerLink]="[item.link]"
-       [routerLinkActive]="['active']"
-       [routerLinkActiveOptions]="{ exact: true }">
+  <li *ngFor="let item of menu_items" [routerLinkActive]="['active']"
+      [routerLinkActiveOptions]="{ exact: true }">
+    <a class="nav-link" [routerLink]="[item.link]">
       {{item.label}}
     </a>
-    <ul *ngFor="let sub_item of item.sub_items">
-      <li>
-        <a class="nav-link" [routerLink]="[sub_item.link]" [routerLinkActive]="['active']">
+    <ul class="sub-menu">
+      <li *ngFor="let sub_item of item.sub_items" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }">
+        <a class="sub-link" [routerLink]="[sub_item.link]">
           {{sub_item.label}}
         </a>
       </li>
