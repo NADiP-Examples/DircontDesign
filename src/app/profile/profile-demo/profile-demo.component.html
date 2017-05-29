@@ -1,20 +1,29 @@
-
 <div class="userblock">
   <div class="advice">
     <i class="fa fa-exclamation animated jello"></i>
     Добро пожаловать на Dircount.com!
     Для начала работы вам необходимо заполнить некоторые данные о себе.
   </div>
-  <h4>Ваши данные:<button class="icon-button" (click)="reset()"><i class="fa fa-refresh icon-block pointer yellow-font"></i></button></h4>
+  <h4>Ваши данные:
+    <button class="icon-button" (click)="reset()"><i class="fa fa-refresh icon-block pointer yellow-font"></i></button>
+  </h4>
   <!-- Status 1-1 -->
   <div *ngIf="user_data_status != 'saved'">
-    <form class="animated" [ngClass]="{fadeOut:user_data_status === 'saved_animate'}"
+    <form novalidate class="animated" [ngClass]="{fadeOut:user_data_status === 'saved_animate'}"
           (animationend)="animationEnd()"
           #userDataForm="ngForm" (submit)="$event.preventDefault();saveUserData(userDataForm)">
       <div (keyup)="onKeyUp($event)" class="input-dotted-overflow">
-        <input (focus)="user_data_status='opened'" placeholder="Иванов" type="text" required><i>*</i>
-        <input (focus)="user_data_status='opened'" placeholder="Иван" type="text" required><i>*</i>
-        <input (focus)="user_data_status='opened'" placeholder="Иванович" type="text" class="ng-touched ng-invalid">
+        <input (focus)="user_data_status='opened'" placeholder="Иванов" type="text" required
+               [(ngModel)]="user.second_name" name="second_name" #second_name="ngModel"><i>*</i>
+        <span *ngIf="second_name.touched && second_name.errors?.required" class="error">
+          Не может быть пустым
+        </span>
+        <input (focus)="user_data_status='opened'" placeholder="Иван" type="text" required
+               [(ngModel)]="user.first_name" name="first_name" #first_name="ngModel"><i>*</i>
+        <span *ngIf="first_name.touched && first_name.errors?.required" class="error">
+          Не может быть пустым
+        </span>
+        <input (focus)="user_data_status='opened'" placeholder="Иванович" type="text">
       </div>
       <!-- Status 1-2 -->
       <div *ngIf="user_data_status === 'opened' || user_data_status === 'saved_animate'">
@@ -32,10 +41,14 @@
           </div>
           <div class="info-block">
             <h4>Контактная информация:</h4>
-            <i class="fa fa-mobile icon-block"></i><input placeholder="Номер телефона" type="tel">
+            <i class="fa fa-mobile icon-block"></i>
+            <input placeholder="Номер телефона" type="tel">
             <button title="Добавить" class="icon-button"><i class="fa fa-plus"></i></button>
             <br>
-            <i class="fa fa-at icon-block"></i><input placeholder="Электронная почта" type="text">
+            <i class="fa fa-at icon-block"></i>
+            <input placeholder="Электронная почта" type="email" required email
+                   [(ngModel)]="user.email" name="email" #email="ngModel">
+            <span class="error" *ngIf="email.errors?.email">Невалидный email</span>
             <button class="icon-button"><i class="fa fa-pencil"></i></button>
             <input placeholder="Пароль" type="text">
             <button class="icon-button"><i class="fa fa-pencil"></i></button>
@@ -59,7 +72,10 @@
   <div *ngIf="user_data_status === 'saved'" class="animated fadeIn">
     <h2>Иванов Иван Иванович<span class="user-id"> (ID:<b>486672</b>)</span></h2>
     <p><i class="fa fa-flag icon-block yellow-font"></i><span class="res-id bold">Резидент РФ</span></p>
-    <p><i class="fa fa-mobile icon-block yellow-font"></i><span class="user-phone bold">8 923 623 7634</span><span class="yellow-font f-size-1-5"> / </span><span class="user-phone bold">8 913 623 6344</span><span class="yellow-font f-size-1-5"> / </span><span class="user-phone bold">8 900 613 7688</span> </p>
+    <p><i class="fa fa-mobile icon-block yellow-font"></i><span class="user-phone bold">8 923 623 7634</span>
+      <span class="yellow-font f-size-1-5"> / </span><span class="user-phone bold">8 913 623 6344</span>
+      <span class="yellow-font f-size-1-5"> / </span><span class="user-phone bold">8 900 613 7688</span>
+    </p>
     <p><i class="fa fa-at icon-block yellow-font"></i><span class="user-mail bold">ivanov@testmail.com</span></p>
     <button (click)="userDataEdit()" class="btn-primary"><i class="fa fa-pencil"></i> Редактировать</button>
   </div>
@@ -73,7 +89,7 @@
   </div>
   <h4>Данные о компании:</h4>
   <!-- Status 2-1 -->
-  <form class="animated" [ngClass]="{fadeOut:company_data_status === 'saved_animate'}"
+  <form novalidate class="animated" [ngClass]="{fadeOut:company_data_status === 'saved_animate'}"
         (animationend)="animationEnd()"
         #companyDataForm="ngForm" (submit)="$event.preventDefault();saveCompanyData(companyDataForm)">
     <div *ngIf="company_data_status != 'saved'" class="info-block">
@@ -135,12 +151,25 @@
       <div *ngIf="legal_status == 'individual_entrepreneur'">
         <div class="input-dotted-overflow animated bounceInLeft">
           <label>ИП </label>
-          <input placeholder="Иванов" type="text">
-          <input placeholder="Иван" type="text">
+          <input placeholder="Иванов" type="text" required>
+          <li>*</li>
+          <input placeholder="Иван" type="text" required>
+          <li>*</li>
           <input placeholder="Иванович" type="text"><br>
-          <label>ИНН </label><input placeholder="1234567890" type="text">
-          <label>КПП </label><input placeholder="1234567890" type="text">
-          <label>ОРНИП </label><input placeholder="1234567890" type="text">
+          <label>ИНН </label>
+          <input placeholder="1234567890" type="text" required
+                 [(ngModel)]="company.itn" name="itn" #itn="ngModel"
+                 [rangeLength]="[12, 12]">
+          <div *ngIf="itn.touched && itn.errors?.required" class="error">
+            Не может быть пустым
+          </div>
+          <div class="error" *ngIf="itn.touched && itn.errors?.rangeLength">
+            12 цифр
+          </div>
+          <label>КПП </label>
+          <input placeholder="1234567890" type="text">
+          <label>ОРНИП </label>
+          <input placeholder="1234567890" type="text">
         </div>
         <div class="input-dotted-overflow info-block animated bounceInRight">
           <label class="h5">Серия паспорта: </label><input placeholder="1234" type="text" class="passport-series">

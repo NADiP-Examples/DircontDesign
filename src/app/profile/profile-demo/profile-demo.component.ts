@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+// import { NgModel, NgForm } from '@angular/forms';
 import { close } from "fs";
 
 type states = 'closed' | "opened" | "saved" | "saved_animate";
@@ -20,6 +21,9 @@ export class ProfileDemoComponent implements OnInit {
   company_data_status: states = "closed";
   company_visible: boolean = false;
   legal_status = '';
+
+  user: Object = {};
+  company: Object = {};
 
   constructor() {
   }
@@ -48,8 +52,15 @@ export class ProfileDemoComponent implements OnInit {
   }
 
   saveUserData(form) {
-    // console.log("Save form");
-    this.user_data_status = "saved_animate";
+    if (form.valid) {
+      console.log("Form is valid");
+      this.user_data_status = "saved_animate";
+      return
+    }
+    for (let control_key in form.controls) {
+      let control = form.controls[control_key];
+      control.markAsTouched()
+    }
   }
 
   selectLegalStatus(legal_status) {
@@ -63,8 +74,16 @@ export class ProfileDemoComponent implements OnInit {
   }
 
   saveCompanyData(form) {
-    // console.log("Save form");
-    this.company_data_status = "saved_animate";
+    console.log("form controls =", form.controls);
+    if (form.valid) {
+      console.log("Form is valid");
+      this.company_data_status = "saved_animate";
+      return
+    }
+    for (let control_key in form.controls) {
+      let control = form.controls[control_key];
+      control.markAsTouched()
+    }
   }
 
   reset() {
