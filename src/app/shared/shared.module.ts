@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { Angular2FontAwesomeModule } from 'angular2-font-awesome/angular2-font-awesome'
 
 import { LeftMenuComponent } from './components/left-menu/left-menu.component'
-import { TopMenuComponent } from './components/top-menu/top-menu.component'
+import { StatusBar } from './components/status-bar/status-bar.component'
 
 
 import { TitleFromPipe } from 'app/shared/pipes/titleFrom'
@@ -19,12 +19,12 @@ import { TitleFromPipe } from 'app/shared/pipes/titleFrom'
   ],
   declarations: [
     LeftMenuComponent,
-    TopMenuComponent,
+    StatusBar,
     TitleFromPipe
   ],
   exports: [
     LeftMenuComponent,
-    TopMenuComponent,
+    StatusBar,
     TitleFromPipe
   ]
 })

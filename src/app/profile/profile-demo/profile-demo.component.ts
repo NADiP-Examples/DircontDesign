@@ -5,8 +5,6 @@ import { close } from "fs";
 
 type states = 'closed' | "opened" | "saved" | "saved_animate";
 
-// TODO: оследовательную анимация
-
 @Component({
   // selector: 'app-profile-demo',
   templateUrl: './profile-demo.component.html',
@@ -18,10 +16,12 @@ export class ProfileDemoComponent implements OnInit {
   //   if (input_second_name) input_second_name.nativeElement.focus();
   // }
 
-  user_data_status: states = "saved";
-  company_data_status: states = "saved";
-  company_visible: boolean = true;
+  user_data_status: states = "closed";
+  company_data_status: states = "closed";
+  company_visible: boolean = false;
   legal_status = '';
+  adbice_start_visible:boolean = true;
+  adbice_company_visible:boolean = true;
 
   user: Object = {};
   company: Object = {};
@@ -56,6 +56,7 @@ export class ProfileDemoComponent implements OnInit {
     if (form.valid) {
       console.log("Form is valid");
       this.user_data_status = "saved_animate";
+      this.adbice_start_visible = false;
       return
     }
     for (let control_key in form.controls) {
@@ -80,18 +81,22 @@ export class ProfileDemoComponent implements OnInit {
     if (form.valid) {
       console.log("Form is valid");
       this.company_data_status = "saved_animate";
+      this.adbice_company_visible = false;
       return
     }
     for (let control_key in form.controls) {
       let control = form.controls[control_key];
       control.markAsTouched()
     }
+    this.notify.error('Внимание!', 'Пожалуйста, заполните все поля отмеченные звёздочкой (*)');
   }
 
   reset() {
     this.user_data_status = "closed";
     this.company_data_status = "closed";
     this.company_visible = false;
+    this.adbice_start_visible = true;
+    this.adbice_company_visible = true;
   }
 
 }

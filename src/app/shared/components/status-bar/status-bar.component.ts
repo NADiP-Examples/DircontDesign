@@ -3,10 +3,10 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 
 @Component({
   selector: 'status-bar',
-  templateUrl: './top-menu.component.html',
-  styleUrls: ['./top-menu.component.sass'],
+  templateUrl: './status-bar.component.html',
+  styleUrls: ['./status-bar.component.sass'],
 })
-export class TopMenuComponent implements OnChanges {
+export class StatusBar implements OnChanges {
   @Input() menu_items;
   @Input() menu_disabled;
 
