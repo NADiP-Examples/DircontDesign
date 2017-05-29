@@ -1,7 +1,7 @@
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
   <div class="container">
-    <div class="col-sm-11">
+    <div class="col-3">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
               data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
               aria-label="Toggle navigation">
@@ -9,10 +9,15 @@
       </button>
       <a class="navbar-brand" [routerLink]="['']">Dircont</a>
     </div>
-    <div class="col-sm-1" id="navbarSupportedContent">
-      <button class="btn btn-primary" (click)="authService.logout()">
-        Выйти
-      </button>
+    <div class="col-5" id="navbarSupportedContent">
+    </div>
+    <div class="col-4">
+      <ul class="nav navbar-nav yellow-font">
+        <li class="active col-2"><a class="yellow-font" href="#"><i class="fa fa-exclamation icon-block pointer yellow-font"></i></a><span class="num">2</span></li>
+        <li class="col-2"><a class="yellow-font" href="#"><i class="fa fa-envelope icon-block pointer yellow-font"></i></a><span class="num">8</span></li>
+        <li class="col-7"><i class="fa fa-user icon-block pointer yellow-font"></i> <a class="yellow-font" href="#">Иванов И.И.</a> / <a class="yellow-font" href="#">Выйти</a></li>
+        <li class="col-1"><i class="fa fa-sliders icon-block pointer yellow-font"></i></li>
+      </ul>
     </div>
   </div>
 </nav>
