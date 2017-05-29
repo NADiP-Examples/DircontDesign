@@ -269,7 +269,8 @@ nav
   color: darken($color1,80%) !important
 
 .left-menu
-  background: darken($color1,2%)
+  //background: mix($color1, $color2, 92%)
+  background: darken($color1,4%)
   padding-top: 10px
   height: 100vh
 
@@ -281,9 +282,11 @@ a.nav-link.active
   border-left: 3px solid
   &:after
     content: " "
-    border-right: 10px solid
-    border-top: 15px solid transparent
+    border-right: 10px solid $color1
+    border-top: 22px solid transparent
+    border-bottom: 22px solid transparent
     display: block
-    float: right
-    border-bottom: 15px solid transparent
+    position: absolute
+    margin-top: -35px
+    right: 0
 

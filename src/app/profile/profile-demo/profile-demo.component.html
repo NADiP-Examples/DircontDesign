@@ -1,4 +1,4 @@
-<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
+
 <div class="userblock">
   <div class="advice">
     <i class="fa fa-exclamation animated jello"></i>
@@ -12,7 +12,7 @@
           (animationend)="animationEnd()"
           #userDataForm="ngForm" (submit)="$event.preventDefault();saveUserData(userDataForm)">
       <div (keyup)="onKeyUp($event)" class="input-dotted-overflow">
-        <input (focus)="user_data_status='opened'" placeholder="Иванов" type="text">
+        <input class="required" (focus)="user_data_status='opened'" placeholder="Иванов" type="text" required>
         <input (focus)="user_data_status='opened'" placeholder="Иван" type="text">
         <input (focus)="user_data_status='opened'" placeholder="Иванович" type="text">
       </div>
