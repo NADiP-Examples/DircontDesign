@@ -26,11 +26,13 @@
           <div class="info-block">
             <h4>Резидентство:</h4>
             <div class="radio">
-              <input class="hidden-xs-up" type="radio" name="resident" id="resident-rf">
+              <input class="hidden-xs-up" type="radio" id="resident-rf" value="russian_federation"
+                     [(ngModel)]="user.residency" name="residency" #residency="ngModel">
               <label for="resident-rf" class="radio-label">Резидент РФ</label>
             </div>
             <div class="radio">
-              <input class="hidden-xs-up" type="radio" name="resident" id="other">
+              <input class="hidden-xs-up" type="radio" id="other" value="other"
+                     [(ngModel)]="user.residency" name="residency">
               <label for="other" class="radio-label">Иное</label>
             </div>
           </div>
@@ -49,15 +51,10 @@
             <button class="icon-button"><i class="fa fa-pencil"></i></button>
           </div>
         </div>
-        <span *ngIf="second_name.touched && second_name.errors?.required" class="error">
-          <i class="fa fa-exclamation animated jello"></i> Пожалуйста, заполните все поля отмеченные звёздочкой (*)
-        </span>
+        <!--<span *ngIf="second_name.touched && second_name.errors?.required" class="error">-->
+          <!--<i class="fa fa-exclamation animated jello"></i> Пожалуйста, заполните все поля отмеченные звёздочкой (*)-->
+        <!--</span>-->
         <div class="agree-and-go animated bounceInLeft">
-          <!--<div>-->
-          <!--<input class="hidden-xs-up" id="cbx" type="checkbox">-->
-          <!--<label class="cbx" for="cbx"></label>-->
-          <!--<label class="lbl" for="cbx"> Я согласен и принимаю <a href="#">условия договора</a></label>-->
-          <!--</div>-->
           <button type="submit" class="btn-primary"><i class="fa fa-check"></i> Сохранить</button>
         </div>
       </div>

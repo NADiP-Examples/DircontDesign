@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 // import { NgModel, NgForm } from '@angular/forms';
+import { NotificationsService } from 'angular2-notifications';
 import { close } from "fs";
 
 type states = 'closed' | "opened" | "saved" | "saved_animate";
@@ -25,7 +26,7 @@ export class ProfileDemoComponent implements OnInit {
   user: Object = {};
   company: Object = {};
 
-  constructor() {
+  constructor(private notify: NotificationsService) {
   }
 
   ngOnInit() {
@@ -61,6 +62,7 @@ export class ProfileDemoComponent implements OnInit {
       let control = form.controls[control_key];
       control.markAsTouched()
     }
+    this.notify.error('Внимание!', 'Пожалуйста, заполните все поля отмеченные звёздочкой (*)');
   }
 
   selectLegalStatus(legal_status) {

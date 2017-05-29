@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { SimpleNotificationsModule } from 'angular2-notifications';
 import 'rxjs/Rx';
 
 import { appRoutes } from './app.routes';
@@ -27,6 +28,7 @@ import { DashboardLayoutComponent } from 'app/shared/layout_components/dashboard
     HttpModule,
     ProfileModule,
     SharedModule,
+    SimpleNotificationsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
   ],
   providers: [
