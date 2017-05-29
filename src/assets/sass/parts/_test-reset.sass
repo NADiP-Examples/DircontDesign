@@ -312,30 +312,42 @@ li.active
     +padding-0
     +block
     list-style-type: none
-    border-bottom: 4px solid $color3
     li.active
-      a
-        +gradient ($color3, right)
-        color: darken($color1,80%)
+      a:before
+        background: $color3!important
+        border: none
     a
       padding: 10px 25px
       display: block
-      color: $color1
+      color: darken($color1,75%)
       text-decoration: none
-      padding: 10px 25px
+      padding: 7px 25px
       text-transform: uppercase
       font-size: 13px
-      font-weight: 600
-      +gradient (darken($color1, 80%), left)
+      font-weight: 500
+      background: darken($color1,6%)
+      border-bottom: 1px solid darken($color1,15%)
+      border-top: 1px solid darken($color1,2%)
+      &:before
+        content: " "
+        width: 8px
+        height: 8px
+        background: transparent
+        border: 1px solid $color3
+        display: inline-block
+        border-radius: 8px
+        margin-right: 5px
 
   & a.nav-link
     background: $color3 !important
     color: darken($color1,80%)!important
     margin: 0 -15px
     padding: 10px 15px
-    border-left: 3px solid
+    border-bottom: 1px solid darken($color3,10%)
+    border-top: 1px solid darken($color3,10%)
     &:after
       content: " "
+      border-right: 10px solid $color1
       border-right: 10px solid $color1
       border-top: 22px solid transparent
       border-bottom: 22px solid transparent
@@ -374,3 +386,9 @@ span.num
   float: right
   li
     margin: 0 10px
+
+.bold
+  font-weight: 500
+
+.res-id
+  +margin-right-15

@@ -71,8 +71,8 @@
     <h2>Иванов Иван Иванович<span class="user-id"> (ID:<b>486672</b>)</span></h2>
     <p><i class="fa fa-flag icon-block yellow-font"></i><span class="res-id bold">Резидент РФ</span></p>
     <p><i class="fa fa-mobile icon-block yellow-font"></i><span class="user-phone bold">8 923 623 7634</span>
-      <span class="yellow-font f-size-1-5"> / </span><span class="user-phone bold">8 913 623 6344</span>
-      <span class="yellow-font f-size-1-5"> / </span><span class="user-phone bold">8 900 613 7688</span>
+      <span class="yellow-font"> / </span><span class="user-phone bold">8 913 623 6344</span>
+      <span class="yellow-font"> / </span><span class="user-phone bold">8 900 613 7688</span>
     </p>
     <p><i class="fa fa-at icon-block yellow-font"></i><span class="user-mail bold">ivanov@testmail.com</span></p>
     <button (click)="userDataEdit()" class="btn-primary"><i class="fa fa-pencil"></i> Редактировать</button>
@@ -81,7 +81,7 @@
 </div>
 <hr>
 <div class="corporate-block animated bounceInDown" *ngIf="company_visible">
-  <div class="advice animated jello">
+  <div class="advice animated jello" *ngIf="company_data_status != 'saved'">
     <i class="fa fa-exclamation animated jello"></i>
     Отличная работа! Теперь расскажите подробнее о вашей компании!
   </div>
@@ -237,13 +237,19 @@
     <!-- END Status 2-2 -->
   </form>
   <!-- END Status 2-1 -->
-  <hr>
   <!-- Status 2-3 -->
   <div *ngIf="company_data_status === 'saved'" class="animated fadeIn">
-    <p>Тут информация о компании... </p>
-    <p>Юридический статус: ИП... </p>
-    <button (click)="companyDataEdit()" class="btn-primary"><i class="fa fa-pencil"></i> Редактировать</button>
+    <h2>ИП "Фёдоров Иван Петрович"</h2>
+    <label>ИНН:</label> <span class="res-id bold">661706400462</span> <label>КПП:</label> <span class="res-id bold">6548452</span><br>
+    <label>ОРНИП:</label> <span class="res-id bold">307667028800032</span>
+    <h4>Паспорт:</h4>
+    <label>Серия:</label> <span class="res-id bold">6617</span> <label> Номер:</label> <span class="res-id bold">98541357</span> <label>Код подразделения:</label> <span class="res-id bold">661706400462</span><br>
+    <label>Выдан:</label> <span class="res-id bold">УВД Центрального района</span>
+    <h4>Адрес:</h4>
+    <label>Почтовый:</label> <span class="res-id bold">620137, г.Екатеринбург, ул. Бехтерева, 3, кв.139</span><br>
+    <label>Адрес регистрации:</label> <span class="res-id bold">620137, г.Екатеринбург, ул. Бехтерева, 3, кв.139</span><br>
+    <button (click)="userDataEdit()" class="btn-primary"><i class="fa fa-pencil"></i> Редактировать</button>
   </div>
-  <!-- END Status 1-3 -->
+  <!-- END Status 2-3 -->
   <hr>
 </div>

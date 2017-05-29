@@ -4,7 +4,7 @@
     <a class="nav-link" [routerLink]="[item.link]">
       {{item.label}}
     </a>
-    <ul class="sub-menu animated bounceInDown">
+    <ul class="sub-menu">
       <li *ngFor="let sub_item of item.sub_items" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }">
         <a class="sub-link" [routerLink]="[sub_item.link]">
