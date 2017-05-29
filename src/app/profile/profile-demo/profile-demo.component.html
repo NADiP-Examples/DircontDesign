@@ -12,9 +12,9 @@
           (animationend)="animationEnd()"
           #userDataForm="ngForm" (submit)="$event.preventDefault();saveUserData(userDataForm)">
       <div (keyup)="onKeyUp($event)" class="input-dotted-overflow">
-        <input class="required" (focus)="user_data_status='opened'" placeholder="Иванов" type="text" required>
-        <input (focus)="user_data_status='opened'" placeholder="Иван" type="text">
-        <input (focus)="user_data_status='opened'" placeholder="Иванович" type="text">
+        <input (focus)="user_data_status='opened'" placeholder="Иванов" type="text" required><i>*</i>
+        <input (focus)="user_data_status='opened'" placeholder="Иван" type="text" required><i>*</i>
+        <input (focus)="user_data_status='opened'" placeholder="Иванович" type="text" class="ng-touched ng-invalid">
       </div>
       <!-- Status 1-2 -->
       <div *ngIf="user_data_status === 'opened' || user_data_status === 'saved_animate'">

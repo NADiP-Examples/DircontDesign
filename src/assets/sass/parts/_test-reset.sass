@@ -129,6 +129,25 @@ input[type=date]
   +mg-left-10
   +bd-none
 
+.input-dotted-overflow
+  +margin-bottom-15
+  input[type=text]
+    border: none
+    border-bottom: 1px dashed #cccccc
+    margin-right: 15px
+    width: 150px
+    outline: none
+    &:required
+      &::after
+        content: "afdsd"
+  i
+    margin: 0 20px 0 -20px
+    color: adjust-hue($color2, -20deg)
+
+.ng-touched.ng-invalid
+  +bg-none
+  border-bottom: 1px dashed adjust-hue($color2, -20deg) !important
+
 // New values ​​of captions
 
 h1, h2, h3, h4, .h1, .h2, .h3, .h4
