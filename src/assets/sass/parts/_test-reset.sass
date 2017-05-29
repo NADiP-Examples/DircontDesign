@@ -293,19 +293,27 @@ nav
   padding-top: 10px
   height: 100vh
 
-a.nav-link.active
-  background: $color3 !important
-  color: darken($color1,80%)!important
-  margin: 0 -15px
-  padding: 10px 15px
-  border-left: 3px solid
-  &:after
-    content: " "
-    border-right: 10px solid $color1
-    border-top: 22px solid transparent
-    border-bottom: 22px solid transparent
+ul.sub-menu
+  display: none
+  li.active
+    background: rgba(0, 141, 0, 0.49)
+
+li.active
+  & ul.sub-menu
     display: block
-    position: absolute
-    margin-top: -35px
-    right: 0
+  & a.nav-link
+    background: $color3 !important
+    color: darken($color1,80%)!important
+    margin: 0 -15px
+    padding: 10px 15px
+    border-left: 3px solid
+    &:after
+      content: " "
+      border-right: 10px solid $color1
+      border-top: 22px solid transparent
+      border-bottom: 22px solid transparent
+      display: block
+      position: absolute
+      margin-top: -35px
+      right: 0
 
