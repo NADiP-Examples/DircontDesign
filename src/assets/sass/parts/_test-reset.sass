@@ -100,7 +100,7 @@
 =txt-shadow
   text-shadow: 1px 1px 0px darken($color1,50%)
 
-.bold, label, .nav
+.bold, label, .nav, .error
   font-weight: bold
   +caption-font-medium
 
@@ -142,11 +142,10 @@ input[type=date]
         content: "afdsd"
   i
     margin: 0 20px 0 -20px
-    color: adjust-hue($color2, -20deg)
+    color: adjust-hue($color2, -50deg)
 
-input.ng-touched.ng-invalid
-  +bg-none
-  border-bottom: 1px dashed adjust-hue($color2, -20deg) !important
+
+
 
 // New values ​​of captions
 
@@ -334,3 +333,18 @@ li.active
       margin-top: -35px
       right: 0
 
+.error
+  color: adjust-hue($color2, -65deg)
+  +margin-bottom-15
+  +inline-block
+  +uppercase
+  font-size: 14px
+  font-weight: 500
+  letter-spacing: 0.7px
+  i
+    font-size: 20px
+
+.ng-touched.ng-invalid
+  +bg-none
+  border-color: adjust-hue($color2, -65deg) !important
+  border-width: 1px !important

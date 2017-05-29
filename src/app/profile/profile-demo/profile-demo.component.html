@@ -15,14 +15,9 @@
       <div (keyup)="onKeyUp($event)" class="input-dotted-overflow">
         <input (focus)="user_data_status='opened'" placeholder="Иванов" type="text" required
                [(ngModel)]="user.second_name" name="second_name" #second_name="ngModel"><i>*</i>
-        <span *ngIf="second_name.touched && second_name.errors?.required" class="error">
-          Не может быть пустым
-        </span>
+
         <input (focus)="user_data_status='opened'" placeholder="Иван" type="text" required
                [(ngModel)]="user.first_name" name="first_name" #first_name="ngModel"><i>*</i>
-        <span *ngIf="first_name.touched && first_name.errors?.required" class="error">
-          Не может быть пустым
-        </span>
         <input (focus)="user_data_status='opened'" placeholder="Иванович" type="text">
       </div>
       <!-- Status 1-2 -->
@@ -54,6 +49,9 @@
             <button class="icon-button"><i class="fa fa-pencil"></i></button>
           </div>
         </div>
+        <span *ngIf="second_name.touched && second_name.errors?.required" class="error">
+          <i class="fa fa-exclamation animated jello"></i> Пожалуйста, заполните все поля отмеченные звёздочкой (*)
+        </span>
         <div class="agree-and-go animated bounceInLeft">
           <!--<div>-->
           <!--<input class="hidden-xs-up" id="cbx" type="checkbox">-->
