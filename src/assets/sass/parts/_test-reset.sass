@@ -301,12 +301,11 @@ li.active
     margin: 0 -15px !important
     +padding-0
     +block
-    background: darken($color1, 85%)
     list-style-type: none
     border-bottom: 4px solid $color3
     li.active
       a
-        background: darken($color3,10%)
+        +gradient ($color3, right)
         color: darken($color1,80%)
     a
       padding: 10px 25px
@@ -317,6 +316,7 @@ li.active
       text-transform: uppercase
       font-size: 13px
       font-weight: 600
+      +gradient (darken($color1, 80%), left)
 
   & a.nav-link
     background: $color3 !important
