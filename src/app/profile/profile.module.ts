@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
 import { CommonModule } from '@angular/common';
 import { Angular2FontAwesomeModule } from 'angular2-font-awesome/angular2-font-awesome';
 
@@ -16,6 +17,7 @@ import { ProfileDemoComponent } from './profile-demo/profile-demo.component';
 @NgModule({
   imports: [
     FormsModule,
+    CustomFormsModule,
     SharedModule,
     CommonModule,
     Angular2FontAwesomeModule
