@@ -11,7 +11,7 @@ import { appRoutes } from './app.routes';
 import { SharedModule } from './shared/shared.module'
 import { ProfileModule } from './profile/profile.module'
 import { AuthService } from './shared/services/auth.service'
-import {GeteployeersService} from './shared/services/geteployeers.service'
+import { GetployeersService } from './shared/services/geteployeers.service'
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.comnponent'
 import { DashboardLayoutComponent } from 'app/shared/layout_components/dashboard_layout/dashboard_layout.component'
@@ -37,7 +37,7 @@ import { FulltreeComponent } from './fulltree/fulltree.component';
   ],
   providers: [
     AuthService,
-    GeteployeersService
+    GetployeersService
   ],
   bootstrap: [AppComponent]
 })

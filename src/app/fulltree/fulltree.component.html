@@ -4,6 +4,7 @@
 <form>
   <input #filter (keyup)="filterNodes(filter.value, tree)" placeholder="filter nodes"/>
 </form>
+<button (click)="loadNewNodes()">Load Nodes</button>
 <div style="height: 400px; width: 300px">
   <tree-root
     #tree
