@@ -9,7 +9,7 @@ import { DashboardLayoutComponent } from './shared/layout_components/dashboard_l
 
 // Other components
 import { NotFoundComponent } from './not-found/not-found.comnponent';
-
+import { FulltreeComponent } from './fulltree/fulltree.component';
 // Guards
 // import { isLoggedIn } from './shared/services/guard.service';
 // import { isHasId } from 'app/shared/services/guard.service';
@@ -23,5 +23,6 @@ export const appRoutes: Routes = [
     //  any routes with CommonComponent
   ]
   },
+  { path: 'tree', component: FulltreeComponent },
   { path: '**', component: NotFoundComponent }
 ];

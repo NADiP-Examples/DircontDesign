@@ -19,6 +19,7 @@
     "@angular/router": "^3.4.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.20",
     "@types/lodash": "^4.14.63",
+    "angular-tree-component": "^3.7.2",
     "angular2-font-awesome": "^1.2.0",
     "angular2-notifications": "^0.4.53",
     "bootstrap": "^4.0.0-alpha.6",

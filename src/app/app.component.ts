@@ -6,9 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+
   public options = {
     position: ["top"],
     timeOut: 5000,
     showProgressBar: false
+
   };
 }
