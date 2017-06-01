@@ -61,18 +61,30 @@ export class FulltreeComponent implements OnInit {
       .map((employees) => {
         //  Вот тут конвертируем данные в нужный формат
         let nodes = [];
-        let node = {name: employees.node.first_name, children: []};
-        // выгребаем только прямых потомков, для начала
-        for (let child of employees.children){
-          let child_node = {name: child.first_name};
-          node.children.push(child_node);
+        let node = {name: employees.node.first_name};
+        if (employees.children){
+          node['children'] = getChildren(employees.children);
         }
+        // Делаем обычную рекурсивную функцию, для получения всех вложенных потомков
+        // Ничего сложного(у меня ушло ровно 12 минут)
+        function getChildren(base_children){
+          let children = [];
+          for (let child of base_children){
+            let child_node = {name: child.first_name};
+            if (employees.children){
+              child_node['children'] = getChildren(child.children);
+            }
+            children.push(child_node);
+          }
+          return children
+        }
+
         nodes.push(node);
         return nodes
       })
       .subscribe((employees) => {
         console.log("load employees = ", employees);
-        // Отображаем дерево только с прямыми потомками
+        // Отображаем полное дерево
         this.nodes = employees;
         // Ура! Работает!
       })
