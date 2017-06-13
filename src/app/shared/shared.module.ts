@@ -6,6 +6,7 @@ import { Angular2FontAwesomeModule } from 'angular2-font-awesome/angular2-font-a
 
 import { LeftMenuComponent } from './components/left-menu/left-menu.component'
 import { StatusBar } from './components/status-bar/status-bar.component'
+import { LocationSelectComponent } from './components/location-select/location-select.component'
 
 
 import { TitleFromPipe } from 'app/shared/pipes/titleFrom'
@@ -20,12 +21,14 @@ import { TitleFromPipe } from 'app/shared/pipes/titleFrom'
   declarations: [
     LeftMenuComponent,
     StatusBar,
-    TitleFromPipe
+    TitleFromPipe,
+    LocationSelectComponent
   ],
   exports: [
     LeftMenuComponent,
     StatusBar,
-    TitleFromPipe
+    TitleFromPipe,
+    LocationSelectComponent
   ]
 })
 export class SharedModule { }

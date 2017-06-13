@@ -14,7 +14,7 @@ import { AuthService } from './shared/services/auth.service'
 
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.comnponent'
-import { DashboardLayoutComponent } from 'app/shared/layout_components/dashboard_layout/dashboard_layout.component'
+import { DashboardLayoutComponent } from 'app/shared/layout_components/dashboard_layout/dashboard_layout.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { DashboardLayoutComponent } from 'app/shared/layout_components/dashboard
     ProfileModule,
     SharedModule,
     SimpleNotificationsModule.forRoot(),
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     AuthService

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from 'app/shared/services/auth.service'
+import { AuthService } from 'app/shared/services/auth.service';
+import { Location } from '../../shared/components/location-select/location.model';
 
 @Component({
   selector: 'app-profile',
@@ -8,6 +9,10 @@ import { AuthService } from 'app/shared/services/auth.service'
   styleUrls: ['./profile.component.sass']
 })
 export class ProfileComponent implements OnInit {
+  //temp data for location component
+  location = new Location('', '', '');  
+  // region = 'country';
+  //temp data for location component
 
   user_data = {
     phones: ['']

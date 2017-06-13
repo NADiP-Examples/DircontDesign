@@ -1,0 +1,77 @@
+<div class="form-group">
+  <form action="">
+    <label>
+      <input 
+        [(value)]="searchText" 
+        placeholder="Search..." 
+        #searchLocation 
+        (keyup)="onKeyup(searchLocation.value)" 
+        type="text" 
+        class="form-control" 
+        title="введите название города">
+      <small *ngIf="location.isSelected">location.reg: {{location.region}}, location.country: {{location.country}}</small>
+      <ul 
+        *ngIf="locations.length">
+        <li
+          *ngFor="let location of locations" 
+          (click)="onSelectLocation(location)"
+          [ngStyle]="{'cursor': 'pointer', 'color': 'blue', 'text-decoration': 'underline'}">
+            {{location.city}}, {{location.region}}, {{location.country}}
+        </li>
+      </ul>
+      <ul
+        *ngIf="isResponseEmpty">
+        <li>
+          <input 
+            type="submit" 
+            class="btn btn-primary" 
+            (click)="onAddLocationLinkClick()" 
+            value ="Add new location">
+        </li>
+      </ul>
+    </label>
+  </form>
+</div>
+
+<div class="form-group" *ngIf="isNotFound">
+  <form #formRef="ngForm" action="" (ngSubmit)="onNewLocationSubmit(formRef.value)">
+    <label for="">
+      City
+      <input
+        required
+        [(ngModel)]="newCity"
+        type="text" 
+        name="newCity" 
+        class="form-control">
+    </label>
+    <label for="">
+      Region
+      <input
+        required
+        [(ngModel)]="newRegion"
+        type="text" 
+        name="newRegion" 
+        class="form-control">
+    </label>
+    <label for="">
+      Country
+      <input 
+        required
+        [(ngModel)]="newCountry"
+        type="text" 
+        name="newCountry" 
+        class="form-control">
+    </label>
+    <label for="">
+      Comment
+      <input 
+        [(ngModel)]="newComment"
+        type="text" 
+        name="newComment" 
+        class="form-control">
+    </label>
+    <label for="">
+      <input type="submit" class="btn btn-primary" value="Add location">
+    </label>
+  </form>
+</div>
